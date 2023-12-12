@@ -14,7 +14,7 @@ class Bot:
    self.replies = replies
   elif type(replies) == str:
    self.replies = {}
-    #file = open('data/support.csv', 'r')
+  #file = open('data/support.csv', 'r')
    file = open(replies, 'r')
    while True:
     # считываем строку
