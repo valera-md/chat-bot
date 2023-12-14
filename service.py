@@ -16,11 +16,11 @@ class Bot:
   elif isinstance(replies, str):
    repliesDict = dict()
    file = open(replies, 'r')
-  # loop till the file ends
+   # loop till the file ends
    while True:
-    # считываем строку
+    # read the line
     line = file.readline()
-    # прерываем цикл, если строка пустая
+    # break the loop if the line is empty
     if line == "":
      break
     fragments =  line.split("#")
