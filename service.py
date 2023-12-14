@@ -12,13 +12,9 @@ class Bot:
 # Bye#Good bye!
 # hm2*: check via isinstance()
   if isinstance(replies, dict):
-  #if type(replies) == dict:
    self.replies = replies
   elif isinstance(replies, str):
-  #elif type(replies) == str:
    repliesDict = dict()
-   #self.replies = {}
-  #file = open('data/support.csv', 'r')
    file = open(replies, 'r')
   # loop till the file ends
    while True:
@@ -26,18 +22,14 @@ class Bot:
     line = file.readline()
     # прерываем цикл, если строка пустая
     if line == "":
-    #if not line:
-     #print("работает")
      break
     fragments =  line.split("#")
     repliesDict[fragments[0]] = fragments[1]
     self.replies  = repliesDict
-    #list = line.split("#")
-    #self.replies[list[0]] = list[1]
    file.close()
  def replyTo(self, message):
 # hm1: try to do this using match-case
-  #variant2
+  #variant1
   match message:
    case "Hi":
     return "Hello!"
