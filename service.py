@@ -44,7 +44,7 @@ class Bot:
    #return "Hello!"
   #elif message == "Bye":
    #return "Good bye!"
-  #elif message == "What isyour name?":
+  #elif message == "What is your name?":
    #return "My name is support."
   #variant3
   #if message in self.replies:
