@@ -41,7 +41,7 @@ class BotFile(Bot):
   if message in self.replies:
    return f"{self.name}: {self.replies[message]}"
  
-"""
+'''
 #pip install requests
 #https://platform.openai.com/docs/api-reference/authentication - документация по подключению к чат боту
 import requests
@@ -83,4 +83,4 @@ class BotGPT2(Bot):
   for chunk in stream:
    if chunk.choices[0].delta.content is not None:
     print(chunk.choices[0].delta.content, end="")
-"""
+'''
