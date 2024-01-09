@@ -1,9 +1,10 @@
 from service import BotDict
-faqBot = BotDict("support", {"Hi":"Hello there", 
-    "Bye":"Good bye !", 
-    "What is your name ?":"My name is support.",
-    "Do you know a joke ?":"Why don't scientists trust atoms ? Because they make up everything !" 
-    })
+faqBot = BotDict("support", {
+ "Hi": "Hello there", 
+ "Bye": "Good bye !", 
+ "What is your name ?": "My name is support.",
+ "Do you know a joke ?": "Why don't scientists trust atoms ? Because they make up everything !" 
+})
 print(faqBot.replyTo("Hi"))
 print(faqBot.replyTo("Bye"))
 print(faqBot.replyTo("What is your name ?"))
