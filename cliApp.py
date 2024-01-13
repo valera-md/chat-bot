@@ -25,8 +25,8 @@ print(fileBot.replyTo("Do you know a joke ?"))
 from service import BotGPT
 gptBot = BotGPT("support", "api_key")
 #print(gptBot.replyTo("Hello, are you GPT bot ?"))
-#print(gptBot.replyTo("What is the air temperature Moldova / Chisinau today ?")) # не натринирован работать в реальном времени, cannot provide real-time information, gpt-3.5 с 2021 года.
-print(gptBot.replyTo("Show me how to use recuests in python"))
+#print(gptBot.replyTo("What is the air temperature Moldova / Chisinau today ?")) # ненатренирован работать в реальном времени, cannot provide real-time information, gpt-3.5 с 2021 года.
+print(gptBot.replyTo("Show me how to use requests in python."))
 #hm1: make this bot CLI interactive
 while True:
  message = input("Ask ai a question or press enter to exit: ")
