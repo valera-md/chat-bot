@@ -10,7 +10,8 @@ class Bot:
 
  def replyTo(self, message):
   return f"{self.name}: Hello!"
- 
+
+'''
  # inheriting classes
 class BotDict(Bot):
  def __init__(self, name, dict):
@@ -40,29 +41,37 @@ class BotFile(Bot):
  def replyTo(self, message):
   if message in self.replies:
    return f"{self.name}: {self.replies[message]}"
- 
 '''
+
 #pip install requests
 #https://platform.openai.com/docs/api-reference/authentication - документация по подключению к чат боту
 import requests
+import json
 class BotGPT(Bot):
  def __init__(self, name, gpt_key):
   super().__init__(name)
   self.gpt_key = gpt_key
  def replyTo(self, message):
   headers = {"Authorization": f"Bearer {self.gpt_key}" } 
-  json = { 
+  payload = { 
    "model": "gpt-3.5-turbo", 
    "messages": [{"role": "user", "content": message}], 
    "temperature": 0.7
 } 
   res = requests.post("https://api.openai.com/v1/chat/completions", 
   headers=headers, 
-  json=json
+  json=payload
 ) 
-  print(res.status_code)
-  print(res.content)
+  if res.status_code == 200:
+   response = res.content.decode('utf-8')
+   data = json.loads(response)
+   return data["choices"][0]["message"]["content"]
+  else:
+   return "Error"
+  #print(res.status_code)
+  #print(res.content)
 
+'''
 # VARIANTS:
 # 1. use gpt openai library: install with pip, import ... (hw optional) 
 # 2. use http requests -> api (in class) 
